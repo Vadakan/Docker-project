@@ -1,5 +1,5 @@
 
-# Start from golang base imagee
+# Start from golang base imageee
 FROM golang:alpine as builder
 
 # Add Maintainer info
