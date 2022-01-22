@@ -15,11 +15,11 @@ WORKDIR /app
 # Copy go mod and sum files
 COPY go.mod go.sum ./
 
-# Download all dependencies. Dependencies will be cached if the go.mod and the go.sum files are not changed
-RUN go mod tidy
-
 # Copy the source from the current directory to the working Directory inside the container
 COPY . .
+
+# Download all dependencies. Dependencies will be cached if the go.mod and the go.sum files are not changed
+RUN go mod tidy
 
 # Build the Go app
 RUN go build -o main main.go
